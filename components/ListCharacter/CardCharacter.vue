@@ -8,7 +8,9 @@
                 span.card-post__categ {{ species }}
                 h3.card-post__title {{ title }}
 
-            a.card-post__link Ver detalhes
+            a.card-post__link(
+                :href="`/personagem/${this.id_character}`"
+            ) Ver detalhes
 
 
 </template>

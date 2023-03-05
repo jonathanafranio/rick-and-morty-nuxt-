@@ -8,11 +8,10 @@
 
 <script>
 import LayoutDefault from '@/components/Layouts/LayoutDefault'
-
 import ListCharacter from '@/components/ListCharacter/ListCharacter'
 
 export default {
-    name: 'IndexPage',
+    name: 'SearchPage',
     components: {
         LayoutDefault,
         ListCharacter

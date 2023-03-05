@@ -1,6 +1,6 @@
 <template lang="pug">
     .character-list
-        h1.character-list__title {{ title }}
+        h1.page-section__title {{ title }}
 
         p.character-list__not-found(v-if="error") Nenhum resultado encontrado. :(
         .character-list__page(
