@@ -1,5 +1,5 @@
 <template lang="pug">
-    article.card-post.mx-4.md-6.sm-6(:id="id_character")
+    article.card-post.mx-3.md-6.sm-6(:id="id_character")
         .card-post__container
             figure.card-post__figure
                 img(:src="thumb" :alt="title")

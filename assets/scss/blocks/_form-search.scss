@@ -4,16 +4,15 @@
     align-items: center;
     width: 100%;
     margin-top: 65px;
-    box-shadow: 0 0 6px rgba($main-color, .3);
     border-radius: 5px;
-    //border: 1px solid $bg-secundary;
+    border: 1px solid $green;
 
     @media screen and (max-width: 767px) {
         flex-wrap: wrap;
         padding: 25px;
     }
     @media screen and (min-width: 768px) {
-        padding: 25px 55px;
+        padding: 25px;
     }
 
 
@@ -30,10 +29,12 @@
         display: flex;
         @media screen and (max-width: 767px) {
             width: 100%;
+            margin-top: 20px;
         }
-        //@media screen and (min-width: 768px) {
-        //    width: calc(100% - 240px);
-        //}
+        @media screen and (min-width: 768px) {
+            //width: calc(100% - 240px);
+            margin: auto 5px;
+        }
     }
 
     &__select,
@@ -45,13 +46,14 @@
 
     &__select {
       border-radius: 5px;
-      border: 1px solid $bg-secundary;
+      border: 1px solid $green;
     }
 
     &__input {
       width: calc(100% - 55px);
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
+      border-color: $green;
     }
 
     &__btn {
