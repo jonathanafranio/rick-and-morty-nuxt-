@@ -2,7 +2,7 @@
     LayoutDefault
         SearchForm
 
-        ListCharacter(:request_url="request_url")
+        ListCharacter(title="Lista de personagens" :request_url="request_url")
 
 
 

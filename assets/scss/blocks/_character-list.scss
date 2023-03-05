@@ -3,6 +3,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
+    &__title {
+        margin-top: 20px;
+    }
+
     &__header {
         display: block;
         width: 100%;

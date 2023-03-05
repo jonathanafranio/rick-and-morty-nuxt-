@@ -1,5 +1,6 @@
 <template lang="pug">
     .character-list(v-if="characters")
+        h1.character-list__title {{ title }}
         .character-list__page(
             v-for="(page, i) in characters"
             v-bind:key="i"
@@ -37,6 +38,7 @@ import Preload from '../Preload'
             Preload
         },
         props: {
+            title: String,
             request_url: {
                 type: String,
                 default() { return 'https://rickandmortyapi.com/api/character' }
