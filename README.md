@@ -1,4 +1,4 @@
-# blog-apiki
+# Rick And Morty em Nuxt.js
 
 ## Build Setup
 
@@ -17,8 +17,6 @@ $ npm run start
 $ npm run generate
 ```
 
-58 / 5.000
-Resultados de tradução
 Para uma explicação detalhada sobre como as coisas funcionam, confira a[documentação do Nuxt.js](https://nuxtjs.org).
 
 ## Diretórios 
