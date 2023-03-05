@@ -1,6 +1,8 @@
 <template lang="pug">
-    .character-list(v-if="characters")
+    .character-list
         h1.character-list__title {{ title }}
+
+        p.character-list__not-found(v-if="error") Nenhum resultado encontrado. :(
         .character-list__page(
             v-for="(page, i) in characters"
             v-bind:key="i"
@@ -52,6 +54,7 @@ import Preload from '../Preload'
                     prev: null
                 },
                 loading: true,
+                error: false
             }
         },
         methods: {
@@ -69,8 +72,8 @@ import Preload from '../Preload'
 
                     })
                     .catch(e => {
-                        console.log("deu ruim a promisse", e)
                         this.loading = false
+                        this.error = true
                     })
             },
             next_page() {

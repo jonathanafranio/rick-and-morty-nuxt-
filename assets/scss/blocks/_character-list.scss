@@ -35,4 +35,11 @@
             background-color: #188ECC;
         }
     }
+
+    &__not-found {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        font-size: 1.8rem;
+    }
 }
