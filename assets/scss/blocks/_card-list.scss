@@ -5,7 +5,7 @@
         margin-top: 65px;
     }
 
-    
+
     &__item {
         display: flex;
         flex-wrap: wrap;
@@ -15,7 +15,7 @@
 
         &:first-child {
             @media screen and (max-width: 767px) {
-                display: none;       
+                display: none;
             }
         }
 
@@ -33,7 +33,7 @@
             padding-right: 20px;
         }
     }
-    
+
     &__title {
         @media screen and (min-width: 768px) {
             font-size: 1.8rem;
@@ -72,7 +72,7 @@
         font-weight: 700;
         color: $main-color;
     }
-    
+
     &__name-product {
         margin-top: 10px;
         font-size: 1.8rem;
@@ -114,7 +114,7 @@
             background-color: $main-color;
             color: $light-main;
         }
-        
+
         &.-left {
             border-right: none;
             border-top-left-radius: 5px;
@@ -203,7 +203,7 @@
         @media screen and (max-width: 767px) {
             flex-direction: column;
         }
-        
+
         @media screen and (min-width: 768px) {
             justify-content: space-between;
             flex-wrap: wrap;
@@ -250,7 +250,7 @@
         }
 
         &.-back {
-            
+
             background-color: #cfcfcf;
             color: $bg-secundary;
 
@@ -272,6 +272,21 @@
             &:hover {
                 background-color: darken($main-color, 30);
             }
+        }
+    }
+
+    &__pagination-btn {
+        display: block;
+        padding: 10px;
+        margin: 50px auto;
+        background-color: $blue;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        transition: background-color 0.2s;
+        will-change: background-color;
+        &:hover {
+            background-color: $green;
         }
     }
 
