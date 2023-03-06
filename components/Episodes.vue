@@ -35,11 +35,16 @@
                 fetch(url)
                     .then(r => r.json())
                     .then(r => {
-                        const epsodios = r.map(e => {
-                            const { name, episode } = e
-                            return { name, episode }
-                        });
-                        this.episodios = epsodios
+                        if(this.epsodes.length > 1) {
+                            const epsodios = r.map(e => {
+                                const { name, episode } = e
+                                return { name, episode }
+                            });
+                            this.episodios = epsodios
+                        } else {
+                            const { name, episode } = r;
+                            this.episodios = [{ name, episode }];
+                        }
                     })
                     .catch(e => console.log('erro', e))
             },
