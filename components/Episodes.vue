@@ -35,17 +35,18 @@
                 fetch(url)
                     .then(r => r.json())
                     .then(r => {
-                        const { name, episode } = r
-                        this.episodios.push({ name, episode })
+                        const epsodios = r.map(e => {
+                            const { name, episode } = e
+                            return { name, episode }
+                        });
+                        this.episodios = epsodios
                     })
                     .catch(e => console.log('erro', e))
             },
             for_epsodes(){
                 if(! this.epsodes) return;
-
-                this.epsodes.forEach(e => {
-                    this.get_epsode(e)
-                });
+                const epsodes = this.epsodes.map( e => e.replace(/[^0-9]/g, '') ).join(',');
+                this.get_epsode(`https://rickandmortyapi.com/api/episode/${epsodes}`)
             }
         },
         created() {
