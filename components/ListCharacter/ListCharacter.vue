@@ -60,7 +60,6 @@ import Preload from '../Preload'
         methods: {
             get_character(url){
                 if(!url) return
-                console.log({ url })
                 fetch(url)
                     .then(r => r.json())
                     .then(res => {
