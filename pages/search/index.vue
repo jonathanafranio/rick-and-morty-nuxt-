@@ -1,6 +1,6 @@
 <template lang="pug">
     LayoutDefault
-        ListCharacter(:title="title" :request_url="request_url")
+        ListCharacter(:title="title" :filtro_status="filtro_status" :filtro_gender="filtro_gender" :filtro_name="filtro_name")
 
 
 
@@ -18,8 +18,10 @@ export default {
     },
     data(){
         return {
-            request_url: '',
-            title: ''
+            title: '',
+            filtro_status: '',
+            filtro_gender: '',
+            filtro_name: ''
         }
     },
     methods: {
@@ -27,6 +29,7 @@ export default {
             return this.$router.push(`/`);
         },
         title_search(str) {
+            console.log({ str })
             const string_replaces = [
                 {
                     text: 'gender',
@@ -73,6 +76,22 @@ export default {
             })
 
             this.title = `Resultado da busca: ${newStr}`
+        },
+        filtro_search(str) {
+            let newStr = str.replace('?', '');
+                newStr = newStr.split('&');
+                newStr = newStr.map( item => {
+                    const split = item.split('=')
+                    const [key, value] = [split[0], split[1]]
+                    return { key, value }
+                });
+            const status_search = newStr.filter( item => item.key === 'status' )
+            const gender_search = newStr.filter( item => item.key === 'gender' )
+            const name_search = newStr.filter( item => item.key === 'name' )
+
+            this.filtro_status = status_search.length > 0 ? status_search[0].value : ''
+            this.filtro_gender = gender_search.length > 0 ? gender_search[0].value : ''
+            this.filtro_name = name_search.length > 0 ? name_search[0].value : ''
         }
     },
     created(){
@@ -81,8 +100,8 @@ export default {
             if(search_query.trim() === '') {
                 this.sem_param()
             } else {
-                this.request_url = `https://rickandmortyapi.com/api/character/${search_query}`
                 this.title_search(search_query)
+                this.filtro_search(search_query)
             }
         }
     }

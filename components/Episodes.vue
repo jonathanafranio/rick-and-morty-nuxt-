@@ -1,14 +1,14 @@
 <template lang="pug">
-    .mx-8.episodes
+    .mx-8.episodes(v-if="epsodes")
         h2.episodes__title Lista de episódios:
 
-        table.episodes__table(v-if="episodios")
+        table.episodes__table
             tr.episodes__tr
                 th Código:
                 th Nome:
 
             tr.episodes__tr(
-                v-for="e in episodios"
+                v-for="e in epsodes"
                 v-bind:key="e.episode"
             )
                 td {{ e.episode }}
@@ -22,41 +22,6 @@
         name: 'Episodes',
         props: {
             epsodes: Array
-        },
-        data() {
-            return {
-                episodios: []
-            }
-        },
-        methods: {
-            get_epsode(url){
-                if(!url) return
-
-                fetch(url)
-                    .then(r => r.json())
-                    .then(r => {
-                        if(this.epsodes.length > 1) {
-                            const epsodios = r.map(e => {
-                                const { name, episode } = e
-                                return { name, episode }
-                            });
-                            this.episodios = epsodios
-                        } else {
-                            const { name, episode } = r;
-                            this.episodios = [{ name, episode }];
-                        }
-                    })
-                    .catch(e => console.log('erro', e))
-            },
-            for_epsodes(){
-                if(! this.epsodes) return;
-                const epsodes = this.epsodes.map( e => e.replace(/[^0-9]/g, '') ).join(',');
-                this.get_epsode(`https://rickandmortyapi.com/api/episode/${epsodes}`)
-            }
-        },
-        created() {
-            this.for_epsodes();
-
         },
     }
 </script>

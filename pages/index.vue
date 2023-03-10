@@ -2,11 +2,7 @@
     LayoutDefault
         SearchForm
 
-        ListCharacter(title="Lista de personagens" :request_url="request_url")
-
-
-
-
+        ListCharacter(title="Lista de personagens")
 
 </template>
 
@@ -22,13 +18,6 @@ export default {
         LayoutDefault,
         SearchForm,
         ListCharacter
-    },
-    data(){
-        return {
-            request_url: 'https://rickandmortyapi.com/api/character'
-        }
-    },
-    methods: {
     },
 }
 </script>
