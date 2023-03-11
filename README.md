@@ -1,5 +1,7 @@
 # Rick And Morty em Nuxt.js
 
+Link on-line: [http://rick-and-morty-nuxt.surge.sh/](http://rick-and-morty-nuxt.surge.sh/)
+
 ## Build Setup
 
 ```bash
@@ -17,7 +19,7 @@ $ npm run start
 $ npm run generate
 ```
 
-Para uma explicação detalhada sobre como as coisas funcionam, confira a[documentação do Nuxt.js](https://nuxtjs.org).
+Para uma explicação detalhada sobre como as coisas funcionam, confira a [documentação do Nuxt.js](https://nuxtjs.org).
 
 ## Diretórios 
 
