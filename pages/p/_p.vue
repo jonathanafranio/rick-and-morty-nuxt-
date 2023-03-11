@@ -2,7 +2,7 @@
     LayoutDefault
         SearchForm
 
-        ListCharacter(title="Lista de personagens" :page_url="prefix_url" search="")
+        ListCharacter(:title="title" :page="page" :page_url="prefix_url" search="")
 
 </template>
 
@@ -18,6 +18,12 @@ export default {
         LayoutDefault,
         SearchForm,
         ListCharacter
+    },
+    data(){
+        return {
+            title: `Lista de personagens - página: ${this.$route.params.p}`,
+            page: this.$route.params.p
+        }
     },
     computed: {
         prefix_url(){

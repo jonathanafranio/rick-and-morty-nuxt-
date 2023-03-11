@@ -6,6 +6,7 @@
             :filtro_gender="filtro_gender"
             :filtro_name="filtro_name"
             :page_url="prefix_url"
+            :page="page"
             :search="search_url"
         )
 
@@ -26,7 +27,8 @@ export default {
             title: '',
             filtro_status: '',
             filtro_gender: '',
-            filtro_name: ''
+            filtro_name: '',
+            page: this.$route.params.p
         }
     },
     methods: {
@@ -80,7 +82,7 @@ export default {
                 newStr = newStr.replaceAll(item.text, item.replace)
             })
 
-            this.title = `Resultado da busca: ${newStr}`
+            this.title = `Resultado da busca: ${newStr} - página: ${this.page}`
         },
         filtro_search(str) {
             let newStr = str.replace('?', '');
