@@ -105,12 +105,6 @@ import Pagination from '../Pagination'
                         this.error = true
                     })
 
-            },
-            next_page() {
-                if(!this.pagination.next) return
-                this.loading = true
-
-                this.page = this.pagination.next
             }
         },
         watch: {
