@@ -1,6 +1,9 @@
 # Rick And Morty em Nuxt.js
 
-Link on-line: [http://rick-and-morty-nuxt.surge.sh/](http://rick-and-morty-nuxt.surge.sh/)
+Aplicação Front-End que consome a API: [https://rickandmortyapi.com/](https://rickandmortyapi.com/), exibindo episódios e personagens da série Rick and Morty.
+Desenvolvido com Vue Nuxt 2.
+
+Link da aplicação: [http://rick-and-morty-nuxt.surge.sh/](http://rick-and-morty-nuxt.surge.sh/)
 
 ## Build Setup
 
